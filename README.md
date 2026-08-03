@@ -43,7 +43,20 @@ npm install
 npm run dev
 ```
 
-## URLs de ejecución
+## Variables de entorno para despliegue
+
+### Backend
+
+- `PORT`
+- `DB_URL`
+- `DB_USERNAME`
+- `DB_PASSWORD`
+
+### Frontend
+
+- `NEXT_PUBLIC_API_URL`
+
+## URLs de ejecución local
 
 - Frontend: `http://localhost:3001`
 - Backend: `http://localhost:8081`
