@@ -1,15 +1,15 @@
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /workspace
 
-COPY backend/pom.xml ./backend/pom.xml
-COPY backend/src ./backend/src
+COPY pom.xml .
+COPY src ./src
 
-RUN mvn -f backend/pom.xml -DskipTests package
+RUN mvn -DskipTests clean package
 
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-COPY --from=build /workspace/backend/target/*.jar /app/app.jar
+COPY --from=build /workspace/target/*.jar /app/app.jar
 
 EXPOSE 8081
 
